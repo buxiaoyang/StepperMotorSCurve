@@ -313,6 +313,7 @@
             this.radioButtonTriangle.TabStop = true;
             this.radioButtonTriangle.Text = "三角形";
             this.radioButtonTriangle.UseVisualStyleBackColor = true;
+            this.radioButtonTriangle.CheckedChanged += new System.EventHandler(this.radioButtonTriangle_CheckedChanged);
             // 
             // radioButtonSinewave
             // 
@@ -323,6 +324,7 @@
             this.radioButtonSinewave.TabIndex = 1;
             this.radioButtonSinewave.Text = "正弦波";
             this.radioButtonSinewave.UseVisualStyleBackColor = true;
+            this.radioButtonSinewave.CheckedChanged += new System.EventHandler(this.radioButtonSinewave_CheckedChanged);
             // 
             // buttonCalcuDraw
             // 
@@ -357,16 +359,21 @@
             this.textBoxCrystalFrequency.Name = "textBoxCrystalFrequency";
             this.textBoxCrystalFrequency.Size = new System.Drawing.Size(145, 22);
             this.textBoxCrystalFrequency.TabIndex = 15;
+            this.textBoxCrystalFrequency.Text = "8000000";
+            this.textBoxCrystalFrequency.TextChanged += new System.EventHandler(this.textBoxCrystalFrequency_TextChanged);
             // 
             // textBoxCrystalCycle
             // 
             this.textBoxCrystalCycle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxCrystalCycle.ForeColor = System.Drawing.Color.Red;
             this.textBoxCrystalCycle.Location = new System.Drawing.Point(123, 44);
             this.textBoxCrystalCycle.Name = "textBoxCrystalCycle";
+            this.textBoxCrystalCycle.ReadOnly = true;
             this.textBoxCrystalCycle.Size = new System.Drawing.Size(145, 22);
             this.textBoxCrystalCycle.TabIndex = 16;
+            this.textBoxCrystalCycle.Text = "1.25E-07";
             // 
             // textBoxMachineCycleDivision
             // 
@@ -377,16 +384,21 @@
             this.textBoxMachineCycleDivision.Name = "textBoxMachineCycleDivision";
             this.textBoxMachineCycleDivision.Size = new System.Drawing.Size(145, 22);
             this.textBoxMachineCycleDivision.TabIndex = 17;
+            this.textBoxMachineCycleDivision.Text = "1";
+            this.textBoxMachineCycleDivision.TextChanged += new System.EventHandler(this.textBoxMachineCycleDivision_TextChanged);
             // 
             // textBoxMachineCycle
             // 
             this.textBoxMachineCycle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxMachineCycle.ForeColor = System.Drawing.Color.Red;
             this.textBoxMachineCycle.Location = new System.Drawing.Point(123, 104);
             this.textBoxMachineCycle.Name = "textBoxMachineCycle";
+            this.textBoxMachineCycle.ReadOnly = true;
             this.textBoxMachineCycle.Size = new System.Drawing.Size(145, 22);
             this.textBoxMachineCycle.TabIndex = 18;
+            this.textBoxMachineCycle.Text = "1.25E-07";
             // 
             // textBoxPWMRolloverInit
             // 
@@ -397,6 +409,8 @@
             this.textBoxPWMRolloverInit.Name = "textBoxPWMRolloverInit";
             this.textBoxPWMRolloverInit.Size = new System.Drawing.Size(145, 22);
             this.textBoxPWMRolloverInit.TabIndex = 19;
+            this.textBoxPWMRolloverInit.Text = "6000";
+            this.textBoxPWMRolloverInit.TextChanged += new System.EventHandler(this.textBoxPWMRolloverInit_TextChanged);
             // 
             // textBoxPWMRolloverMax
             // 
@@ -407,6 +421,8 @@
             this.textBoxPWMRolloverMax.Name = "textBoxPWMRolloverMax";
             this.textBoxPWMRolloverMax.Size = new System.Drawing.Size(145, 22);
             this.textBoxPWMRolloverMax.TabIndex = 20;
+            this.textBoxPWMRolloverMax.Text = "600";
+            this.textBoxPWMRolloverMax.TextChanged += new System.EventHandler(this.textBoxPWMRolloverMax_TextChanged);
             // 
             // textBoxSpeedRiseTime
             // 
@@ -417,26 +433,34 @@
             this.textBoxSpeedRiseTime.Name = "textBoxSpeedRiseTime";
             this.textBoxSpeedRiseTime.Size = new System.Drawing.Size(145, 22);
             this.textBoxSpeedRiseTime.TabIndex = 21;
+            this.textBoxSpeedRiseTime.Text = "200";
+            this.textBoxSpeedRiseTime.TextChanged += new System.EventHandler(this.textBoxSpeedRiseTime_TextChanged);
             // 
             // textBoxAccelerationSlope
             // 
             this.textBoxAccelerationSlope.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxAccelerationSlope.ForeColor = System.Drawing.Color.Red;
             this.textBoxAccelerationSlope.Location = new System.Drawing.Point(123, 299);
             this.textBoxAccelerationSlope.Name = "textBoxAccelerationSlope";
+            this.textBoxAccelerationSlope.ReadOnly = true;
             this.textBoxAccelerationSlope.Size = new System.Drawing.Size(145, 22);
             this.textBoxAccelerationSlope.TabIndex = 22;
+            this.textBoxAccelerationSlope.Text = "0.15";
             // 
             // textBoxAngularVelocity
             // 
             this.textBoxAngularVelocity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxAngularVelocity.ForeColor = System.Drawing.Color.Red;
             this.textBoxAngularVelocity.Location = new System.Drawing.Point(123, 329);
             this.textBoxAngularVelocity.Name = "textBoxAngularVelocity";
+            this.textBoxAngularVelocity.ReadOnly = true;
             this.textBoxAngularVelocity.Size = new System.Drawing.Size(145, 22);
             this.textBoxAngularVelocity.TabIndex = 23;
+            this.textBoxAngularVelocity.Text = "1";
             // 
             // textBoxStageNum
             // 
@@ -447,6 +471,8 @@
             this.textBoxStageNum.Name = "textBoxStageNum";
             this.textBoxStageNum.Size = new System.Drawing.Size(145, 22);
             this.textBoxStageNum.TabIndex = 24;
+            this.textBoxStageNum.Text = "100";
+            this.textBoxStageNum.TextChanged += new System.EventHandler(this.textBoxStageNum_TextChanged);
             // 
             // splitContainerDataOutput
             // 
