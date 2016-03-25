@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 namespace StepperMotorSCurve
@@ -17,8 +18,11 @@ namespace StepperMotorSCurve
         private Double[] pwmTheoryArray = new Double[10000]; //理论的Pwm值（机器周期整数倍）
         private Int32[] pwmActualArray = new Int32[10000]; //实际的Pwm值（机器周期整数倍）
         private Double[] pwmIncrementArray = new Double[10000]; //Pwm增量（机器周期整数倍）
-        private Point[] AccelPointMatrix = new Point[10000]; //加速度坐标点数组
-        private Point[] SpeedPointMatrix = new Point[10000]; //速度坐标点数组
+
+        private int actualArrayLim = 0;
+        private Double maxAcceleration = 0;
+        private Double maxSpeed = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -139,9 +143,8 @@ namespace StepperMotorSCurve
 
         private void buttonCalcuDraw_Click(object sender, EventArgs e)
         {
+            this.textBoxDataOutputPWMCycleChange.Text = "";
             this.dataGridViewOutput.Rows.Clear(); //清除输出数据
-            Double maxAcceleration = 0;
-            Double maxSpeed = 0;
             Double crystalFre = Double.Parse(this.textBoxCrystalFrequency.Text);
             Double crystalCycle = 1 / crystalFre;
             Double machineCycleDivis = Double.Parse(this.textBoxMachineCycleDivision.Text);
@@ -158,7 +161,7 @@ namespace StepperMotorSCurve
             accelerationArray[0] = 6E-6;
             speedArray[0] = 1 / pwmTheoryArray[0];
             pwmIncrementArray[0] = 0;
-            addDataGirdViewRow(0); //输出0行数据
+            addOutputRow(0); //输出0行数据
             if (this.radioButtonTriangle.Checked) //三角波加速度
             {
                 int i;
@@ -171,7 +174,7 @@ namespace StepperMotorSCurve
                     pwmIncrementArray[i] = pwmActualArray[i - 1] - pwmActualArray[i];
                     pwmCycleArray[i] = pwmTheoryArray[i] * machineCycleDivis / crystalFre;
                     timeArray[i] = timeArray[i - 1] + pwmCycleArray[i];
-                    addDataGirdViewRow(i); //输出i行数据
+                    addOutputRow(i); //输出i行数据
                     if ((timeArray[i] * 1000) > (speedRiseTime / 2))
                     {
                         break;
@@ -191,12 +194,13 @@ namespace StepperMotorSCurve
                     pwmIncrementArray[i] = pwmActualArray[i - 1] - pwmActualArray[i];
                     pwmCycleArray[i] = pwmTheoryArray[i] * machineCycleDivis / crystalFre;
                     timeArray[i] = timeArray[i - 1] + pwmCycleArray[i];
-                    addDataGirdViewRow(i); //输出i行数据
+                    addOutputRow(i); //输出i行数据
                     if (speedArray[i] > maxSpeed)
                     {
                         maxSpeed = speedArray[i];
                     }
                 } while (accelerationArray[i] >= 0);
+                actualArrayLim = i - 1; //数据总行数
             }
             else if (this.radioButtonSinewave.Checked) //正弦波加速度
             {
@@ -210,7 +214,7 @@ namespace StepperMotorSCurve
                     pwmCycleArray[i] = pwmTheoryArray[i]*machineCycleDivis/crystalFre;  //pwm周期（实际时间）
                     timeArray[i] = timeArray[i-1]+pwmCycleArray[i]; //时间轴t
                     accelerationArray[i] = accelerationSlope*Math.Sin(angularVelocity*timeArray[i]);  //加速度计算
-                    addDataGirdViewRow(i); //输出i行数据
+                    addOutputRow(i); //输出i行数据
                     if ((timeArray[i] * 1000) > (speedRiseTime / 2))
                     {
                         break;
@@ -230,23 +234,28 @@ namespace StepperMotorSCurve
                     pwmCycleArray[i] = pwmTheoryArray[i] * machineCycleDivis / crystalFre;  //pwm周期（实际时间）
                     timeArray[i] = timeArray[i - 1] + pwmCycleArray[i]; //时间轴t
                     accelerationArray[i] = accelerationSlope * Math.Sin(angularVelocity * timeArray[i]);  //加速度计算
-                    addDataGirdViewRow(i); //输出i行数据
+                    addOutputRow(i); //输出i行数据
                     if (speedArray[i] > maxSpeed)
                     {
                         maxSpeed = speedArray[i];
                     }
                 } while (accelerationArray[i] >= 0);
+                actualArrayLim = i - 1; //数据总行数
             }
+            drawCurve();
         }
 
-        private void addDataGirdViewRow(int i)
+        private void addOutputRow(int i)
         {
+            this.textBoxDataOutputPWMCycleChange.AppendText(String.Format("{0}, ", Convert.ToInt32(pwmIncrementArray[i])));
             this.dataGridViewOutput.Rows.Add(
                 String.Format("{0:n9}", timeArray[i]),
                 String.Format("{0:n9}", accelerationArray[i]),
                 String.Format("{0:n9}", speedArray[i]),
-                String.Format("{0:E3}", pwmActualArray[i]),
-                String.Format("{0:E2}", pwmIncrementArray[i])
+                String.Format("{0}", Convert.ToInt32(pwmActualArray[i])),
+                String.Format("{0}", Convert.ToInt32(pwmIncrementArray[i]))
+                //String.Format("{0:E3}", pwmActualArray[i]),
+                //String.Format("{0:E2}", pwmIncrementArray[i])
             );
         }
 
@@ -255,6 +264,67 @@ namespace StepperMotorSCurve
             using (SolidBrush b = new SolidBrush(this.dataGridViewOutput.RowHeadersDefaultCellStyle.ForeColor))
             {
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
+            }
+        }
+
+        private void drawCurve()
+        {
+            int width = this.pictureBoxSCurve.Width;
+            int height = this.pictureBoxSCurve.Height;
+
+            Bitmap bitmap = new Bitmap(width, height);
+            using (Graphics g = Graphics.FromImage(bitmap))
+            {
+                Font textFont = new Font(new FontFamily("Arial"),12,FontStyle.Regular,GraphicsUnit.Pixel);
+                Pen penBoard = new Pen(Color.Black);
+                Brush brushBoard = new SolidBrush(Color.Black);
+                Pen penSpeed = new Pen(Color.Red);
+                Brush brushSpeed = new SolidBrush(Color.Red);
+                Pen penAccele = new Pen(Color.Blue);
+                Brush brushAccele = new SolidBrush(Color.Blue);
+                g.DrawRectangle(penBoard, 0, 0, width-1, height-1); //画边框
+                g.FillRectangle(brushSpeed, 5, 10 , 30, 5);
+                g.DrawString(String.Format("速度-最大值:{0}pps(未细分前)", 0), textFont, brushBoard, 40, 7);
+                g.FillRectangle(brushAccele, 5, 30, 30, 5);
+                g.DrawString(String.Format("加速度-最大值:{0}弧度/S2", 0), textFont, brushBoard, 40, 27);
+                for (int i = 0; i < actualArrayLim; i++)
+                {
+                    int x = Convert.ToInt32(timeArray[i] * width / timeArray[actualArrayLim]);
+                    int yAcceleration = Convert.ToInt32(accelerationArray[i] * height / maxAcceleration);
+                    int ySpeed = Convert.ToInt32(speedArray[i] * height / maxSpeed);
+                    g.DrawRectangle(penSpeed, x, height - ySpeed, 1, 1);
+                    g.DrawRectangle(penAccele, x, height - yAcceleration, 1, 1);
+                }
+            }
+            this.pictureBoxSCurve.Image = bitmap;
+
+            
+        }
+
+        private void buttonExcelDataOutput_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "CSV (*.csv)|*.csv";
+            sfd.FileName = "Output.csv";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    IDataObject objectSave = Clipboard.GetDataObject();
+                    // Choose whether to write header. Use EnableWithoutHeaderText instead to omit header.
+                    this.dataGridViewOutput.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+                    // Select all the cells
+                    this.dataGridViewOutput.SelectAll();
+                    // Copy (set clipboard)
+                    Clipboard.SetDataObject(this.dataGridViewOutput.GetClipboardContent());
+                    // Paste (get the clipboard and serialize it to a file)
+                    File.WriteAllText(sfd.FileName, Clipboard.GetText(TextDataFormat.CommaSeparatedValue));
+                    MessageBox.Show("导出数据成功。");
+                }
+                catch (IOException ex)
+                {
+                    MessageBox.Show("导出数据失败。" + ex.Message);
+                }
             }
         }
     }

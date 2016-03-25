@@ -59,7 +59,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBoxCurve = new System.Windows.Forms.PictureBox();
             this.pictureBoxSCurve = new System.Windows.Forms.PictureBox();
             this.Output = new System.Windows.Forms.TabPage();
             this.splitContainerDataOutput = new System.Windows.Forms.SplitContainer();
@@ -70,10 +69,12 @@
             this.PWMCycle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PWMCycleVariation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainerDataOutput2 = new System.Windows.Forms.SplitContainer();
-            this.textBoxDataOutputMainRightC = new System.Windows.Forms.TextBox();
+            this.textBoxDataOutputPWMCycleChange = new System.Windows.Forms.TextBox();
             this.textBoxDataOutputMainRightR = new System.Windows.Forms.TextBox();
             this.Help = new System.Windows.Forms.TabPage();
             this.textBoxHelp = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabControlMain.SuspendLayout();
             this.Main.SuspendLayout();
             this.splitContainerMain.Panel1.SuspendLayout();
@@ -81,7 +82,6 @@
             this.splitContainerMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBoxAccelerationMode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCurve)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSCurve)).BeginInit();
             this.Output.SuspendLayout();
             this.splitContainerDataOutput.Panel1.SuspendLayout();
@@ -92,6 +92,8 @@
             this.splitContainerDataOutput2.Panel2.SuspendLayout();
             this.splitContainerDataOutput2.SuspendLayout();
             this.Help.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -151,10 +153,9 @@
             // splitContainerMain.Panel2
             // 
             this.splitContainerMain.Panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.splitContainerMain.Panel2.Controls.Add(this.pictureBoxCurve);
             this.splitContainerMain.Panel2.Controls.Add(this.pictureBoxSCurve);
             this.splitContainerMain.Size = new System.Drawing.Size(868, 548);
-            this.splitContainerMain.SplitterDistance = 289;
+            this.splitContainerMain.SplitterDistance = 320;
             this.splitContainerMain.TabIndex = 0;
             // 
             // panel1
@@ -165,7 +166,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 425);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(289, 123);
+            this.panel1.Size = new System.Drawing.Size(320, 123);
             this.panel1.TabIndex = 25;
             // 
             // buttonExcelDataOutput
@@ -175,10 +176,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonExcelDataOutput.Location = new System.Drawing.Point(160, 70);
             this.buttonExcelDataOutput.Name = "buttonExcelDataOutput";
-            this.buttonExcelDataOutput.Size = new System.Drawing.Size(110, 38);
+            this.buttonExcelDataOutput.Size = new System.Drawing.Size(141, 38);
             this.buttonExcelDataOutput.TabIndex = 14;
             this.buttonExcelDataOutput.Text = "Excel数据输出";
             this.buttonExcelDataOutput.UseVisualStyleBackColor = true;
+            this.buttonExcelDataOutput.Click += new System.EventHandler(this.buttonExcelDataOutput_Click);
             // 
             // groupBoxAccelerationMode
             // 
@@ -222,7 +224,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCalcuDraw.Location = new System.Drawing.Point(160, 14);
             this.buttonCalcuDraw.Name = "buttonCalcuDraw";
-            this.buttonCalcuDraw.Size = new System.Drawing.Size(110, 38);
+            this.buttonCalcuDraw.Size = new System.Drawing.Size(141, 38);
             this.buttonCalcuDraw.TabIndex = 12;
             this.buttonCalcuDraw.Text = "计算及绘图";
             this.buttonCalcuDraw.UseVisualStyleBackColor = true;
@@ -235,7 +237,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxStageNum.Location = new System.Drawing.Point(123, 359);
             this.textBoxStageNum.Name = "textBoxStageNum";
-            this.textBoxStageNum.Size = new System.Drawing.Size(145, 22);
+            this.textBoxStageNum.Size = new System.Drawing.Size(176, 22);
             this.textBoxStageNum.TabIndex = 24;
             this.textBoxStageNum.Text = "100";
             this.textBoxStageNum.TextChanged += new System.EventHandler(this.textBoxStageNum_TextChanged);
@@ -249,7 +251,7 @@
             this.textBoxAngularVelocity.Location = new System.Drawing.Point(123, 329);
             this.textBoxAngularVelocity.Name = "textBoxAngularVelocity";
             this.textBoxAngularVelocity.ReadOnly = true;
-            this.textBoxAngularVelocity.Size = new System.Drawing.Size(145, 22);
+            this.textBoxAngularVelocity.Size = new System.Drawing.Size(176, 22);
             this.textBoxAngularVelocity.TabIndex = 23;
             this.textBoxAngularVelocity.Text = "1";
             // 
@@ -262,7 +264,7 @@
             this.textBoxAccelerationSlope.Location = new System.Drawing.Point(123, 299);
             this.textBoxAccelerationSlope.Name = "textBoxAccelerationSlope";
             this.textBoxAccelerationSlope.ReadOnly = true;
-            this.textBoxAccelerationSlope.Size = new System.Drawing.Size(145, 22);
+            this.textBoxAccelerationSlope.Size = new System.Drawing.Size(176, 22);
             this.textBoxAccelerationSlope.TabIndex = 22;
             this.textBoxAccelerationSlope.Text = "0.15";
             // 
@@ -273,7 +275,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSpeedRiseTime.Location = new System.Drawing.Point(123, 269);
             this.textBoxSpeedRiseTime.Name = "textBoxSpeedRiseTime";
-            this.textBoxSpeedRiseTime.Size = new System.Drawing.Size(145, 22);
+            this.textBoxSpeedRiseTime.Size = new System.Drawing.Size(176, 22);
             this.textBoxSpeedRiseTime.TabIndex = 21;
             this.textBoxSpeedRiseTime.Text = "200";
             this.textBoxSpeedRiseTime.TextChanged += new System.EventHandler(this.textBoxSpeedRiseTime_TextChanged);
@@ -285,7 +287,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPWMRolloverMax.Location = new System.Drawing.Point(123, 214);
             this.textBoxPWMRolloverMax.Name = "textBoxPWMRolloverMax";
-            this.textBoxPWMRolloverMax.Size = new System.Drawing.Size(145, 22);
+            this.textBoxPWMRolloverMax.Size = new System.Drawing.Size(176, 22);
             this.textBoxPWMRolloverMax.TabIndex = 20;
             this.textBoxPWMRolloverMax.Text = "600";
             this.textBoxPWMRolloverMax.TextChanged += new System.EventHandler(this.textBoxPWMRolloverMax_TextChanged);
@@ -297,7 +299,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPWMRolloverInit.Location = new System.Drawing.Point(123, 159);
             this.textBoxPWMRolloverInit.Name = "textBoxPWMRolloverInit";
-            this.textBoxPWMRolloverInit.Size = new System.Drawing.Size(145, 22);
+            this.textBoxPWMRolloverInit.Size = new System.Drawing.Size(176, 22);
             this.textBoxPWMRolloverInit.TabIndex = 19;
             this.textBoxPWMRolloverInit.Text = "6000";
             this.textBoxPWMRolloverInit.TextChanged += new System.EventHandler(this.textBoxPWMRolloverInit_TextChanged);
@@ -311,7 +313,7 @@
             this.textBoxMachineCycle.Location = new System.Drawing.Point(123, 104);
             this.textBoxMachineCycle.Name = "textBoxMachineCycle";
             this.textBoxMachineCycle.ReadOnly = true;
-            this.textBoxMachineCycle.Size = new System.Drawing.Size(145, 22);
+            this.textBoxMachineCycle.Size = new System.Drawing.Size(176, 22);
             this.textBoxMachineCycle.TabIndex = 18;
             this.textBoxMachineCycle.Text = "1.25E-07";
             // 
@@ -322,7 +324,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxMachineCycleDivision.Location = new System.Drawing.Point(123, 74);
             this.textBoxMachineCycleDivision.Name = "textBoxMachineCycleDivision";
-            this.textBoxMachineCycleDivision.Size = new System.Drawing.Size(145, 22);
+            this.textBoxMachineCycleDivision.Size = new System.Drawing.Size(176, 22);
             this.textBoxMachineCycleDivision.TabIndex = 17;
             this.textBoxMachineCycleDivision.Text = "1";
             this.textBoxMachineCycleDivision.TextChanged += new System.EventHandler(this.textBoxMachineCycleDivision_TextChanged);
@@ -336,7 +338,7 @@
             this.textBoxCrystalCycle.Location = new System.Drawing.Point(123, 44);
             this.textBoxCrystalCycle.Name = "textBoxCrystalCycle";
             this.textBoxCrystalCycle.ReadOnly = true;
-            this.textBoxCrystalCycle.Size = new System.Drawing.Size(145, 22);
+            this.textBoxCrystalCycle.Size = new System.Drawing.Size(176, 22);
             this.textBoxCrystalCycle.TabIndex = 16;
             this.textBoxCrystalCycle.Text = "1.25E-07";
             // 
@@ -347,7 +349,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxCrystalFrequency.Location = new System.Drawing.Point(123, 14);
             this.textBoxCrystalFrequency.Name = "textBoxCrystalFrequency";
-            this.textBoxCrystalFrequency.Size = new System.Drawing.Size(145, 22);
+            this.textBoxCrystalFrequency.Size = new System.Drawing.Size(176, 22);
             this.textBoxCrystalFrequency.TabIndex = 15;
             this.textBoxCrystalFrequency.Text = "8000000";
             this.textBoxCrystalFrequency.TextChanged += new System.EventHandler(this.textBoxCrystalFrequency_TextChanged);
@@ -453,21 +455,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "晶振频率（HZ）:";
             // 
-            // pictureBoxCurve
-            // 
-            this.pictureBoxCurve.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxCurve.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxCurve.Name = "pictureBoxCurve";
-            this.pictureBoxCurve.Size = new System.Drawing.Size(575, 548);
-            this.pictureBoxCurve.TabIndex = 1;
-            this.pictureBoxCurve.TabStop = false;
-            // 
             // pictureBoxSCurve
             // 
+            this.pictureBoxSCurve.BackColor = System.Drawing.Color.White;
             this.pictureBoxSCurve.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxSCurve.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxSCurve.Name = "pictureBoxSCurve";
-            this.pictureBoxSCurve.Size = new System.Drawing.Size(575, 548);
+            this.pictureBoxSCurve.Size = new System.Drawing.Size(544, 548);
             this.pictureBoxSCurve.TabIndex = 0;
             this.pictureBoxSCurve.TabStop = false;
             // 
@@ -550,33 +544,33 @@
             // 
             // splitContainerDataOutput2.Panel1
             // 
-            this.splitContainerDataOutput2.Panel1.Controls.Add(this.textBoxDataOutputMainRightC);
+            this.splitContainerDataOutput2.Panel1.Controls.Add(this.groupBox1);
             // 
             // splitContainerDataOutput2.Panel2
             // 
-            this.splitContainerDataOutput2.Panel2.Controls.Add(this.textBoxDataOutputMainRightR);
+            this.splitContainerDataOutput2.Panel2.Controls.Add(this.groupBox2);
             this.splitContainerDataOutput2.Size = new System.Drawing.Size(297, 548);
             this.splitContainerDataOutput2.SplitterDistance = 148;
             this.splitContainerDataOutput2.TabIndex = 0;
             // 
-            // textBoxDataOutputMainRightC
+            // textBoxDataOutputPWMCycleChange
             // 
-            this.textBoxDataOutputMainRightC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDataOutputMainRightC.Location = new System.Drawing.Point(0, 0);
-            this.textBoxDataOutputMainRightC.Multiline = true;
-            this.textBoxDataOutputMainRightC.Name = "textBoxDataOutputMainRightC";
-            this.textBoxDataOutputMainRightC.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDataOutputMainRightC.Size = new System.Drawing.Size(148, 548);
-            this.textBoxDataOutputMainRightC.TabIndex = 1;
+            this.textBoxDataOutputPWMCycleChange.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxDataOutputPWMCycleChange.Location = new System.Drawing.Point(3, 18);
+            this.textBoxDataOutputPWMCycleChange.Multiline = true;
+            this.textBoxDataOutputPWMCycleChange.Name = "textBoxDataOutputPWMCycleChange";
+            this.textBoxDataOutputPWMCycleChange.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxDataOutputPWMCycleChange.Size = new System.Drawing.Size(142, 527);
+            this.textBoxDataOutputPWMCycleChange.TabIndex = 1;
             // 
             // textBoxDataOutputMainRightR
             // 
             this.textBoxDataOutputMainRightR.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDataOutputMainRightR.Location = new System.Drawing.Point(0, 0);
+            this.textBoxDataOutputMainRightR.Location = new System.Drawing.Point(3, 18);
             this.textBoxDataOutputMainRightR.Multiline = true;
             this.textBoxDataOutputMainRightR.Name = "textBoxDataOutputMainRightR";
             this.textBoxDataOutputMainRightR.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDataOutputMainRightR.Size = new System.Drawing.Size(145, 548);
+            this.textBoxDataOutputMainRightR.Size = new System.Drawing.Size(139, 527);
             this.textBoxDataOutputMainRightR.TabIndex = 1;
             // 
             // Help
@@ -600,6 +594,28 @@
             this.textBoxHelp.TabIndex = 1;
             this.textBoxHelp.Text = resources.GetString("textBoxHelp.Text");
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBoxDataOutputPWMCycleChange);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(148, 548);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "PWM周期变化量";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBoxDataOutputMainRightR);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(145, 548);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -618,7 +634,6 @@
             this.panel1.ResumeLayout(false);
             this.groupBoxAccelerationMode.ResumeLayout(false);
             this.groupBoxAccelerationMode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCurve)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSCurve)).EndInit();
             this.Output.ResumeLayout(false);
             this.splitContainerDataOutput.Panel1.ResumeLayout(false);
@@ -626,12 +641,14 @@
             this.splitContainerDataOutput.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutput)).EndInit();
             this.splitContainerDataOutput2.Panel1.ResumeLayout(false);
-            this.splitContainerDataOutput2.Panel1.PerformLayout();
             this.splitContainerDataOutput2.Panel2.ResumeLayout(false);
-            this.splitContainerDataOutput2.Panel2.PerformLayout();
             this.splitContainerDataOutput2.ResumeLayout(false);
             this.Help.ResumeLayout(false);
             this.Help.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -670,10 +687,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBoxCurve;
         private System.Windows.Forms.SplitContainer splitContainerDataOutput;
         private System.Windows.Forms.SplitContainer splitContainerDataOutput2;
-        private System.Windows.Forms.TextBox textBoxDataOutputMainRightC;
+        private System.Windows.Forms.TextBox textBoxDataOutputPWMCycleChange;
         private System.Windows.Forms.TextBox textBoxDataOutputMainRightR;
         private System.Windows.Forms.TextBox textBoxHelp;
         private System.Windows.Forms.Panel panel1;
@@ -683,6 +699,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Speed;
         private System.Windows.Forms.DataGridViewTextBoxColumn PWMCycle;
         private System.Windows.Forms.DataGridViewTextBoxColumn PWMCycleVariation;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 
