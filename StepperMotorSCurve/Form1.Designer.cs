@@ -32,60 +32,66 @@
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.Main = new System.Windows.Forms.TabPage();
             this.splitContainerMain = new System.Windows.Forms.SplitContainer();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonExcelDataOutput = new System.Windows.Forms.Button();
+            this.groupBoxAccelerationMode = new System.Windows.Forms.GroupBox();
+            this.radioButtonSinewave = new System.Windows.Forms.RadioButton();
+            this.radioButtonTriangle = new System.Windows.Forms.RadioButton();
+            this.buttonCalcuDraw = new System.Windows.Forms.Button();
+            this.textBoxStageNum = new System.Windows.Forms.TextBox();
+            this.textBoxAngularVelocity = new System.Windows.Forms.TextBox();
+            this.textBoxAccelerationSlope = new System.Windows.Forms.TextBox();
+            this.textBoxSpeedRiseTime = new System.Windows.Forms.TextBox();
+            this.textBoxPWMRolloverMax = new System.Windows.Forms.TextBox();
+            this.textBoxPWMRolloverInit = new System.Windows.Forms.TextBox();
+            this.textBoxMachineCycle = new System.Windows.Forms.TextBox();
+            this.textBoxMachineCycleDivision = new System.Windows.Forms.TextBox();
+            this.textBoxCrystalCycle = new System.Windows.Forms.TextBox();
+            this.textBoxCrystalFrequency = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBoxCurve = new System.Windows.Forms.PictureBox();
             this.pictureBoxSCurve = new System.Windows.Forms.PictureBox();
             this.Output = new System.Windows.Forms.TabPage();
-            this.Help = new System.Windows.Forms.TabPage();
-            this.pictureBoxCurve = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.groupBoxAccelerationMode = new System.Windows.Forms.GroupBox();
-            this.radioButtonTriangle = new System.Windows.Forms.RadioButton();
-            this.radioButtonSinewave = new System.Windows.Forms.RadioButton();
-            this.buttonCalcuDraw = new System.Windows.Forms.Button();
-            this.buttonExcelDataOutput = new System.Windows.Forms.Button();
-            this.textBoxCrystalFrequency = new System.Windows.Forms.TextBox();
-            this.textBoxCrystalCycle = new System.Windows.Forms.TextBox();
-            this.textBoxMachineCycleDivision = new System.Windows.Forms.TextBox();
-            this.textBoxMachineCycle = new System.Windows.Forms.TextBox();
-            this.textBoxPWMRolloverInit = new System.Windows.Forms.TextBox();
-            this.textBoxPWMRolloverMax = new System.Windows.Forms.TextBox();
-            this.textBoxSpeedRiseTime = new System.Windows.Forms.TextBox();
-            this.textBoxAccelerationSlope = new System.Windows.Forms.TextBox();
-            this.textBoxAngularVelocity = new System.Windows.Forms.TextBox();
-            this.textBoxStageNum = new System.Windows.Forms.TextBox();
             this.splitContainerDataOutput = new System.Windows.Forms.SplitContainer();
+            this.dataGridViewOutput = new System.Windows.Forms.DataGridView();
+            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Acceleration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Speed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PWMCycle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PWMCycleVariation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainerDataOutput2 = new System.Windows.Forms.SplitContainer();
-            this.textBoxDataOutputMain = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxDataOutputMainRightC = new System.Windows.Forms.TextBox();
+            this.textBoxDataOutputMainRightR = new System.Windows.Forms.TextBox();
+            this.Help = new System.Windows.Forms.TabPage();
             this.textBoxHelp = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.tabControlMain.SuspendLayout();
             this.Main.SuspendLayout();
             this.splitContainerMain.Panel1.SuspendLayout();
             this.splitContainerMain.Panel2.SuspendLayout();
             this.splitContainerMain.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.groupBoxAccelerationMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCurve)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSCurve)).BeginInit();
             this.Output.SuspendLayout();
-            this.Help.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCurve)).BeginInit();
-            this.groupBoxAccelerationMode.SuspendLayout();
             this.splitContainerDataOutput.Panel1.SuspendLayout();
             this.splitContainerDataOutput.Panel2.SuspendLayout();
             this.splitContainerDataOutput.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutput)).BeginInit();
             this.splitContainerDataOutput2.Panel1.SuspendLayout();
             this.splitContainerDataOutput2.Panel2.SuspendLayout();
             this.splitContainerDataOutput2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.Help.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMain
@@ -151,6 +157,311 @@
             this.splitContainerMain.SplitterDistance = 289;
             this.splitContainerMain.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.buttonExcelDataOutput);
+            this.panel1.Controls.Add(this.groupBoxAccelerationMode);
+            this.panel1.Controls.Add(this.buttonCalcuDraw);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 425);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(289, 123);
+            this.panel1.TabIndex = 25;
+            // 
+            // buttonExcelDataOutput
+            // 
+            this.buttonExcelDataOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonExcelDataOutput.Location = new System.Drawing.Point(160, 70);
+            this.buttonExcelDataOutput.Name = "buttonExcelDataOutput";
+            this.buttonExcelDataOutput.Size = new System.Drawing.Size(110, 38);
+            this.buttonExcelDataOutput.TabIndex = 14;
+            this.buttonExcelDataOutput.Text = "Excel数据输出";
+            this.buttonExcelDataOutput.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxAccelerationMode
+            // 
+            this.groupBoxAccelerationMode.Controls.Add(this.radioButtonSinewave);
+            this.groupBoxAccelerationMode.Controls.Add(this.radioButtonTriangle);
+            this.groupBoxAccelerationMode.Location = new System.Drawing.Point(13, 11);
+            this.groupBoxAccelerationMode.Name = "groupBoxAccelerationMode";
+            this.groupBoxAccelerationMode.Size = new System.Drawing.Size(125, 100);
+            this.groupBoxAccelerationMode.TabIndex = 11;
+            this.groupBoxAccelerationMode.TabStop = false;
+            this.groupBoxAccelerationMode.Text = "加速度模式";
+            // 
+            // radioButtonSinewave
+            // 
+            this.radioButtonSinewave.AutoSize = true;
+            this.radioButtonSinewave.Location = new System.Drawing.Point(14, 62);
+            this.radioButtonSinewave.Name = "radioButtonSinewave";
+            this.radioButtonSinewave.Size = new System.Drawing.Size(71, 21);
+            this.radioButtonSinewave.TabIndex = 1;
+            this.radioButtonSinewave.Text = "正弦波";
+            this.radioButtonSinewave.UseVisualStyleBackColor = true;
+            this.radioButtonSinewave.CheckedChanged += new System.EventHandler(this.radioButtonSinewave_CheckedChanged);
+            // 
+            // radioButtonTriangle
+            // 
+            this.radioButtonTriangle.AutoSize = true;
+            this.radioButtonTriangle.Checked = true;
+            this.radioButtonTriangle.Location = new System.Drawing.Point(14, 29);
+            this.radioButtonTriangle.Name = "radioButtonTriangle";
+            this.radioButtonTriangle.Size = new System.Drawing.Size(71, 21);
+            this.radioButtonTriangle.TabIndex = 0;
+            this.radioButtonTriangle.TabStop = true;
+            this.radioButtonTriangle.Text = "三角形";
+            this.radioButtonTriangle.UseVisualStyleBackColor = true;
+            this.radioButtonTriangle.CheckedChanged += new System.EventHandler(this.radioButtonTriangle_CheckedChanged);
+            // 
+            // buttonCalcuDraw
+            // 
+            this.buttonCalcuDraw.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCalcuDraw.Location = new System.Drawing.Point(160, 14);
+            this.buttonCalcuDraw.Name = "buttonCalcuDraw";
+            this.buttonCalcuDraw.Size = new System.Drawing.Size(110, 38);
+            this.buttonCalcuDraw.TabIndex = 12;
+            this.buttonCalcuDraw.Text = "计算及绘图";
+            this.buttonCalcuDraw.UseVisualStyleBackColor = true;
+            this.buttonCalcuDraw.Click += new System.EventHandler(this.buttonCalcuDraw_Click);
+            // 
+            // textBoxStageNum
+            // 
+            this.textBoxStageNum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxStageNum.Location = new System.Drawing.Point(123, 359);
+            this.textBoxStageNum.Name = "textBoxStageNum";
+            this.textBoxStageNum.Size = new System.Drawing.Size(145, 22);
+            this.textBoxStageNum.TabIndex = 24;
+            this.textBoxStageNum.Text = "100";
+            this.textBoxStageNum.TextChanged += new System.EventHandler(this.textBoxStageNum_TextChanged);
+            // 
+            // textBoxAngularVelocity
+            // 
+            this.textBoxAngularVelocity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxAngularVelocity.ForeColor = System.Drawing.Color.Red;
+            this.textBoxAngularVelocity.Location = new System.Drawing.Point(123, 329);
+            this.textBoxAngularVelocity.Name = "textBoxAngularVelocity";
+            this.textBoxAngularVelocity.ReadOnly = true;
+            this.textBoxAngularVelocity.Size = new System.Drawing.Size(145, 22);
+            this.textBoxAngularVelocity.TabIndex = 23;
+            this.textBoxAngularVelocity.Text = "1";
+            // 
+            // textBoxAccelerationSlope
+            // 
+            this.textBoxAccelerationSlope.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxAccelerationSlope.ForeColor = System.Drawing.Color.Red;
+            this.textBoxAccelerationSlope.Location = new System.Drawing.Point(123, 299);
+            this.textBoxAccelerationSlope.Name = "textBoxAccelerationSlope";
+            this.textBoxAccelerationSlope.ReadOnly = true;
+            this.textBoxAccelerationSlope.Size = new System.Drawing.Size(145, 22);
+            this.textBoxAccelerationSlope.TabIndex = 22;
+            this.textBoxAccelerationSlope.Text = "0.15";
+            // 
+            // textBoxSpeedRiseTime
+            // 
+            this.textBoxSpeedRiseTime.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSpeedRiseTime.Location = new System.Drawing.Point(123, 269);
+            this.textBoxSpeedRiseTime.Name = "textBoxSpeedRiseTime";
+            this.textBoxSpeedRiseTime.Size = new System.Drawing.Size(145, 22);
+            this.textBoxSpeedRiseTime.TabIndex = 21;
+            this.textBoxSpeedRiseTime.Text = "200";
+            this.textBoxSpeedRiseTime.TextChanged += new System.EventHandler(this.textBoxSpeedRiseTime_TextChanged);
+            // 
+            // textBoxPWMRolloverMax
+            // 
+            this.textBoxPWMRolloverMax.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPWMRolloverMax.Location = new System.Drawing.Point(123, 214);
+            this.textBoxPWMRolloverMax.Name = "textBoxPWMRolloverMax";
+            this.textBoxPWMRolloverMax.Size = new System.Drawing.Size(145, 22);
+            this.textBoxPWMRolloverMax.TabIndex = 20;
+            this.textBoxPWMRolloverMax.Text = "600";
+            this.textBoxPWMRolloverMax.TextChanged += new System.EventHandler(this.textBoxPWMRolloverMax_TextChanged);
+            // 
+            // textBoxPWMRolloverInit
+            // 
+            this.textBoxPWMRolloverInit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPWMRolloverInit.Location = new System.Drawing.Point(123, 159);
+            this.textBoxPWMRolloverInit.Name = "textBoxPWMRolloverInit";
+            this.textBoxPWMRolloverInit.Size = new System.Drawing.Size(145, 22);
+            this.textBoxPWMRolloverInit.TabIndex = 19;
+            this.textBoxPWMRolloverInit.Text = "6000";
+            this.textBoxPWMRolloverInit.TextChanged += new System.EventHandler(this.textBoxPWMRolloverInit_TextChanged);
+            // 
+            // textBoxMachineCycle
+            // 
+            this.textBoxMachineCycle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxMachineCycle.ForeColor = System.Drawing.Color.Red;
+            this.textBoxMachineCycle.Location = new System.Drawing.Point(123, 104);
+            this.textBoxMachineCycle.Name = "textBoxMachineCycle";
+            this.textBoxMachineCycle.ReadOnly = true;
+            this.textBoxMachineCycle.Size = new System.Drawing.Size(145, 22);
+            this.textBoxMachineCycle.TabIndex = 18;
+            this.textBoxMachineCycle.Text = "1.25E-07";
+            // 
+            // textBoxMachineCycleDivision
+            // 
+            this.textBoxMachineCycleDivision.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxMachineCycleDivision.Location = new System.Drawing.Point(123, 74);
+            this.textBoxMachineCycleDivision.Name = "textBoxMachineCycleDivision";
+            this.textBoxMachineCycleDivision.Size = new System.Drawing.Size(145, 22);
+            this.textBoxMachineCycleDivision.TabIndex = 17;
+            this.textBoxMachineCycleDivision.Text = "1";
+            this.textBoxMachineCycleDivision.TextChanged += new System.EventHandler(this.textBoxMachineCycleDivision_TextChanged);
+            // 
+            // textBoxCrystalCycle
+            // 
+            this.textBoxCrystalCycle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxCrystalCycle.ForeColor = System.Drawing.Color.Red;
+            this.textBoxCrystalCycle.Location = new System.Drawing.Point(123, 44);
+            this.textBoxCrystalCycle.Name = "textBoxCrystalCycle";
+            this.textBoxCrystalCycle.ReadOnly = true;
+            this.textBoxCrystalCycle.Size = new System.Drawing.Size(145, 22);
+            this.textBoxCrystalCycle.TabIndex = 16;
+            this.textBoxCrystalCycle.Text = "1.25E-07";
+            // 
+            // textBoxCrystalFrequency
+            // 
+            this.textBoxCrystalFrequency.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxCrystalFrequency.Location = new System.Drawing.Point(123, 14);
+            this.textBoxCrystalFrequency.Name = "textBoxCrystalFrequency";
+            this.textBoxCrystalFrequency.Size = new System.Drawing.Size(145, 22);
+            this.textBoxCrystalFrequency.TabIndex = 15;
+            this.textBoxCrystalFrequency.Text = "8000000";
+            this.textBoxCrystalFrequency.TextChanged += new System.EventHandler(this.textBoxCrystalFrequency_TextChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label11.Location = new System.Drawing.Point(5, 394);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(230, 17);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "注：每个阶段内部的PWM增量都相同";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label10.Location = new System.Drawing.Point(5, 364);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(68, 17);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "总阶段数:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(5, 334);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(54, 17);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "角速度:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(5, 304);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(82, 17);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "加速度斜率:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(5, 248);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(207, 17);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "S曲线半周期/速度上升期（毫秒）:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(5, 193);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(255, 17);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "最高速时PWM翻转周期（机器周期倍数）:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(5, 138);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(241, 17);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "PWM翻转周期初始值（机器周期倍数）:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(5, 109);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(96, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "机器周期（秒）:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(5, 79);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "机器周期分频:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(5, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "晶振周期（秒）:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(5, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "晶振频率（HZ）:";
+            // 
+            // pictureBoxCurve
+            // 
+            this.pictureBoxCurve.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxCurve.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxCurve.Name = "pictureBoxCurve";
+            this.pictureBoxCurve.Size = new System.Drawing.Size(575, 548);
+            this.pictureBoxCurve.TabIndex = 1;
+            this.pictureBoxCurve.TabStop = false;
+            // 
             // pictureBoxSCurve
             // 
             this.pictureBoxSCurve.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -171,309 +482,6 @@
             this.Output.Text = "输出数据";
             this.Output.UseVisualStyleBackColor = true;
             // 
-            // Help
-            // 
-            this.Help.Controls.Add(this.textBoxHelp);
-            this.Help.Location = new System.Drawing.Point(4, 25);
-            this.Help.Name = "Help";
-            this.Help.Size = new System.Drawing.Size(874, 554);
-            this.Help.TabIndex = 2;
-            this.Help.Text = "版本及说明";
-            this.Help.UseVisualStyleBackColor = true;
-            // 
-            // pictureBoxCurve
-            // 
-            this.pictureBoxCurve.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxCurve.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxCurve.Name = "pictureBoxCurve";
-            this.pictureBoxCurve.Size = new System.Drawing.Size(575, 548);
-            this.pictureBoxCurve.TabIndex = 1;
-            this.pictureBoxCurve.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "晶振频率（HZ）:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "晶振周期（秒）:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 79);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "机器周期分频:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 109);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "机器周期（秒）:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 138);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(241, 17);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "PWM翻转周期初始值（机器周期倍数）:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, 193);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(255, 17);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "最高速时PWM翻转周期（机器周期倍数）:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(5, 248);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(207, 17);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "S曲线半周期/速度上升期（毫秒）:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(5, 304);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 17);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "加速度斜率:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(5, 334);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 17);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "角速度:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(5, 364);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 17);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "总阶段数:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label11.Location = new System.Drawing.Point(5, 394);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(230, 17);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "注：每个阶段内部的PWM增量都相同";
-            // 
-            // groupBoxAccelerationMode
-            // 
-            this.groupBoxAccelerationMode.Controls.Add(this.radioButtonSinewave);
-            this.groupBoxAccelerationMode.Controls.Add(this.radioButtonTriangle);
-            this.groupBoxAccelerationMode.Location = new System.Drawing.Point(13, 11);
-            this.groupBoxAccelerationMode.Name = "groupBoxAccelerationMode";
-            this.groupBoxAccelerationMode.Size = new System.Drawing.Size(125, 100);
-            this.groupBoxAccelerationMode.TabIndex = 11;
-            this.groupBoxAccelerationMode.TabStop = false;
-            this.groupBoxAccelerationMode.Text = "加速度模式";
-            // 
-            // radioButtonTriangle
-            // 
-            this.radioButtonTriangle.AutoSize = true;
-            this.radioButtonTriangle.Checked = true;
-            this.radioButtonTriangle.Location = new System.Drawing.Point(14, 29);
-            this.radioButtonTriangle.Name = "radioButtonTriangle";
-            this.radioButtonTriangle.Size = new System.Drawing.Size(71, 21);
-            this.radioButtonTriangle.TabIndex = 0;
-            this.radioButtonTriangle.TabStop = true;
-            this.radioButtonTriangle.Text = "三角形";
-            this.radioButtonTriangle.UseVisualStyleBackColor = true;
-            this.radioButtonTriangle.CheckedChanged += new System.EventHandler(this.radioButtonTriangle_CheckedChanged);
-            // 
-            // radioButtonSinewave
-            // 
-            this.radioButtonSinewave.AutoSize = true;
-            this.radioButtonSinewave.Location = new System.Drawing.Point(14, 62);
-            this.radioButtonSinewave.Name = "radioButtonSinewave";
-            this.radioButtonSinewave.Size = new System.Drawing.Size(71, 21);
-            this.radioButtonSinewave.TabIndex = 1;
-            this.radioButtonSinewave.Text = "正弦波";
-            this.radioButtonSinewave.UseVisualStyleBackColor = true;
-            this.radioButtonSinewave.CheckedChanged += new System.EventHandler(this.radioButtonSinewave_CheckedChanged);
-            // 
-            // buttonCalcuDraw
-            // 
-            this.buttonCalcuDraw.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCalcuDraw.Location = new System.Drawing.Point(160, 14);
-            this.buttonCalcuDraw.Name = "buttonCalcuDraw";
-            this.buttonCalcuDraw.Size = new System.Drawing.Size(110, 38);
-            this.buttonCalcuDraw.TabIndex = 12;
-            this.buttonCalcuDraw.Text = "计算及绘图";
-            this.buttonCalcuDraw.UseVisualStyleBackColor = true;
-            // 
-            // buttonExcelDataOutput
-            // 
-            this.buttonExcelDataOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExcelDataOutput.Location = new System.Drawing.Point(160, 70);
-            this.buttonExcelDataOutput.Name = "buttonExcelDataOutput";
-            this.buttonExcelDataOutput.Size = new System.Drawing.Size(110, 38);
-            this.buttonExcelDataOutput.TabIndex = 14;
-            this.buttonExcelDataOutput.Text = "Excel数据输出";
-            this.buttonExcelDataOutput.UseVisualStyleBackColor = true;
-            // 
-            // textBoxCrystalFrequency
-            // 
-            this.textBoxCrystalFrequency.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxCrystalFrequency.Location = new System.Drawing.Point(123, 14);
-            this.textBoxCrystalFrequency.Name = "textBoxCrystalFrequency";
-            this.textBoxCrystalFrequency.Size = new System.Drawing.Size(145, 22);
-            this.textBoxCrystalFrequency.TabIndex = 15;
-            this.textBoxCrystalFrequency.Text = "8000000";
-            this.textBoxCrystalFrequency.TextChanged += new System.EventHandler(this.textBoxCrystalFrequency_TextChanged);
-            // 
-            // textBoxCrystalCycle
-            // 
-            this.textBoxCrystalCycle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxCrystalCycle.ForeColor = System.Drawing.Color.Red;
-            this.textBoxCrystalCycle.Location = new System.Drawing.Point(123, 44);
-            this.textBoxCrystalCycle.Name = "textBoxCrystalCycle";
-            this.textBoxCrystalCycle.ReadOnly = true;
-            this.textBoxCrystalCycle.Size = new System.Drawing.Size(145, 22);
-            this.textBoxCrystalCycle.TabIndex = 16;
-            this.textBoxCrystalCycle.Text = "1.25E-07";
-            // 
-            // textBoxMachineCycleDivision
-            // 
-            this.textBoxMachineCycleDivision.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxMachineCycleDivision.Location = new System.Drawing.Point(123, 74);
-            this.textBoxMachineCycleDivision.Name = "textBoxMachineCycleDivision";
-            this.textBoxMachineCycleDivision.Size = new System.Drawing.Size(145, 22);
-            this.textBoxMachineCycleDivision.TabIndex = 17;
-            this.textBoxMachineCycleDivision.Text = "1";
-            this.textBoxMachineCycleDivision.TextChanged += new System.EventHandler(this.textBoxMachineCycleDivision_TextChanged);
-            // 
-            // textBoxMachineCycle
-            // 
-            this.textBoxMachineCycle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxMachineCycle.ForeColor = System.Drawing.Color.Red;
-            this.textBoxMachineCycle.Location = new System.Drawing.Point(123, 104);
-            this.textBoxMachineCycle.Name = "textBoxMachineCycle";
-            this.textBoxMachineCycle.ReadOnly = true;
-            this.textBoxMachineCycle.Size = new System.Drawing.Size(145, 22);
-            this.textBoxMachineCycle.TabIndex = 18;
-            this.textBoxMachineCycle.Text = "1.25E-07";
-            // 
-            // textBoxPWMRolloverInit
-            // 
-            this.textBoxPWMRolloverInit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPWMRolloverInit.Location = new System.Drawing.Point(123, 159);
-            this.textBoxPWMRolloverInit.Name = "textBoxPWMRolloverInit";
-            this.textBoxPWMRolloverInit.Size = new System.Drawing.Size(145, 22);
-            this.textBoxPWMRolloverInit.TabIndex = 19;
-            this.textBoxPWMRolloverInit.Text = "6000";
-            this.textBoxPWMRolloverInit.TextChanged += new System.EventHandler(this.textBoxPWMRolloverInit_TextChanged);
-            // 
-            // textBoxPWMRolloverMax
-            // 
-            this.textBoxPWMRolloverMax.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPWMRolloverMax.Location = new System.Drawing.Point(123, 214);
-            this.textBoxPWMRolloverMax.Name = "textBoxPWMRolloverMax";
-            this.textBoxPWMRolloverMax.Size = new System.Drawing.Size(145, 22);
-            this.textBoxPWMRolloverMax.TabIndex = 20;
-            this.textBoxPWMRolloverMax.Text = "600";
-            this.textBoxPWMRolloverMax.TextChanged += new System.EventHandler(this.textBoxPWMRolloverMax_TextChanged);
-            // 
-            // textBoxSpeedRiseTime
-            // 
-            this.textBoxSpeedRiseTime.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSpeedRiseTime.Location = new System.Drawing.Point(123, 269);
-            this.textBoxSpeedRiseTime.Name = "textBoxSpeedRiseTime";
-            this.textBoxSpeedRiseTime.Size = new System.Drawing.Size(145, 22);
-            this.textBoxSpeedRiseTime.TabIndex = 21;
-            this.textBoxSpeedRiseTime.Text = "200";
-            this.textBoxSpeedRiseTime.TextChanged += new System.EventHandler(this.textBoxSpeedRiseTime_TextChanged);
-            // 
-            // textBoxAccelerationSlope
-            // 
-            this.textBoxAccelerationSlope.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxAccelerationSlope.ForeColor = System.Drawing.Color.Red;
-            this.textBoxAccelerationSlope.Location = new System.Drawing.Point(123, 299);
-            this.textBoxAccelerationSlope.Name = "textBoxAccelerationSlope";
-            this.textBoxAccelerationSlope.ReadOnly = true;
-            this.textBoxAccelerationSlope.Size = new System.Drawing.Size(145, 22);
-            this.textBoxAccelerationSlope.TabIndex = 22;
-            this.textBoxAccelerationSlope.Text = "0.15";
-            // 
-            // textBoxAngularVelocity
-            // 
-            this.textBoxAngularVelocity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxAngularVelocity.ForeColor = System.Drawing.Color.Red;
-            this.textBoxAngularVelocity.Location = new System.Drawing.Point(123, 329);
-            this.textBoxAngularVelocity.Name = "textBoxAngularVelocity";
-            this.textBoxAngularVelocity.ReadOnly = true;
-            this.textBoxAngularVelocity.Size = new System.Drawing.Size(145, 22);
-            this.textBoxAngularVelocity.TabIndex = 23;
-            this.textBoxAngularVelocity.Text = "1";
-            // 
-            // textBoxStageNum
-            // 
-            this.textBoxStageNum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxStageNum.Location = new System.Drawing.Point(123, 359);
-            this.textBoxStageNum.Name = "textBoxStageNum";
-            this.textBoxStageNum.Size = new System.Drawing.Size(145, 22);
-            this.textBoxStageNum.TabIndex = 24;
-            this.textBoxStageNum.Text = "100";
-            this.textBoxStageNum.TextChanged += new System.EventHandler(this.textBoxStageNum_TextChanged);
-            // 
             // splitContainerDataOutput
             // 
             this.splitContainerDataOutput.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -482,14 +490,57 @@
             // 
             // splitContainerDataOutput.Panel1
             // 
-            this.splitContainerDataOutput.Panel1.Controls.Add(this.textBoxDataOutputMain);
+            this.splitContainerDataOutput.Panel1.Controls.Add(this.dataGridViewOutput);
             // 
             // splitContainerDataOutput.Panel2
             // 
             this.splitContainerDataOutput.Panel2.Controls.Add(this.splitContainerDataOutput2);
             this.splitContainerDataOutput.Size = new System.Drawing.Size(868, 548);
-            this.splitContainerDataOutput.SplitterDistance = 434;
+            this.splitContainerDataOutput.SplitterDistance = 567;
             this.splitContainerDataOutput.TabIndex = 0;
+            // 
+            // dataGridViewOutput
+            // 
+            this.dataGridViewOutput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOutput.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Time,
+            this.Acceleration,
+            this.Speed,
+            this.PWMCycle,
+            this.PWMCycleVariation});
+            this.dataGridViewOutput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewOutput.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewOutput.Name = "dataGridViewOutput";
+            this.dataGridViewOutput.RowTemplate.Height = 24;
+            this.dataGridViewOutput.Size = new System.Drawing.Size(567, 548);
+            this.dataGridViewOutput.TabIndex = 0;
+            this.dataGridViewOutput.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewOutput_RowPostPaint);
+            // 
+            // Time
+            // 
+            this.Time.HeaderText = "时间";
+            this.Time.Name = "Time";
+            // 
+            // Acceleration
+            // 
+            this.Acceleration.HeaderText = "加速度";
+            this.Acceleration.Name = "Acceleration";
+            // 
+            // Speed
+            // 
+            this.Speed.HeaderText = "速度";
+            this.Speed.Name = "Speed";
+            // 
+            // PWMCycle
+            // 
+            this.PWMCycle.HeaderText = "PWM周期";
+            this.PWMCycle.Name = "PWMCycle";
+            // 
+            // PWMCycleVariation
+            // 
+            this.PWMCycleVariation.HeaderText = "PWM周期变化量";
+            this.PWMCycleVariation.Name = "PWMCycleVariation";
+            this.PWMCycleVariation.Width = 140;
             // 
             // splitContainerDataOutput2
             // 
@@ -499,44 +550,44 @@
             // 
             // splitContainerDataOutput2.Panel1
             // 
-            this.splitContainerDataOutput2.Panel1.Controls.Add(this.textBox1);
+            this.splitContainerDataOutput2.Panel1.Controls.Add(this.textBoxDataOutputMainRightC);
             // 
             // splitContainerDataOutput2.Panel2
             // 
-            this.splitContainerDataOutput2.Panel2.Controls.Add(this.textBox2);
-            this.splitContainerDataOutput2.Size = new System.Drawing.Size(430, 548);
-            this.splitContainerDataOutput2.SplitterDistance = 215;
+            this.splitContainerDataOutput2.Panel2.Controls.Add(this.textBoxDataOutputMainRightR);
+            this.splitContainerDataOutput2.Size = new System.Drawing.Size(297, 548);
+            this.splitContainerDataOutput2.SplitterDistance = 148;
             this.splitContainerDataOutput2.TabIndex = 0;
             // 
-            // textBoxDataOutputMain
+            // textBoxDataOutputMainRightC
             // 
-            this.textBoxDataOutputMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDataOutputMain.Location = new System.Drawing.Point(0, 0);
-            this.textBoxDataOutputMain.Multiline = true;
-            this.textBoxDataOutputMain.Name = "textBoxDataOutputMain";
-            this.textBoxDataOutputMain.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDataOutputMain.Size = new System.Drawing.Size(434, 548);
-            this.textBoxDataOutputMain.TabIndex = 0;
+            this.textBoxDataOutputMainRightC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxDataOutputMainRightC.Location = new System.Drawing.Point(0, 0);
+            this.textBoxDataOutputMainRightC.Multiline = true;
+            this.textBoxDataOutputMainRightC.Name = "textBoxDataOutputMainRightC";
+            this.textBoxDataOutputMainRightC.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxDataOutputMainRightC.Size = new System.Drawing.Size(148, 548);
+            this.textBoxDataOutputMainRightC.TabIndex = 1;
             // 
-            // textBox1
+            // textBoxDataOutputMainRightR
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(215, 548);
-            this.textBox1.TabIndex = 1;
+            this.textBoxDataOutputMainRightR.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxDataOutputMainRightR.Location = new System.Drawing.Point(0, 0);
+            this.textBoxDataOutputMainRightR.Multiline = true;
+            this.textBoxDataOutputMainRightR.Name = "textBoxDataOutputMainRightR";
+            this.textBoxDataOutputMainRightR.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxDataOutputMainRightR.Size = new System.Drawing.Size(145, 548);
+            this.textBoxDataOutputMainRightR.TabIndex = 1;
             // 
-            // textBox2
+            // Help
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(0, 0);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox2.Size = new System.Drawing.Size(211, 548);
-            this.textBox2.TabIndex = 1;
+            this.Help.Controls.Add(this.textBoxHelp);
+            this.Help.Location = new System.Drawing.Point(4, 25);
+            this.Help.Name = "Help";
+            this.Help.Size = new System.Drawing.Size(874, 554);
+            this.Help.TabIndex = 2;
+            this.Help.Text = "版本及说明";
+            this.Help.UseVisualStyleBackColor = true;
             // 
             // textBoxHelp
             // 
@@ -548,17 +599,6 @@
             this.textBoxHelp.Size = new System.Drawing.Size(874, 554);
             this.textBoxHelp.TabIndex = 1;
             this.textBoxHelp.Text = resources.GetString("textBoxHelp.Text");
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.buttonExcelDataOutput);
-            this.panel1.Controls.Add(this.groupBoxAccelerationMode);
-            this.panel1.Controls.Add(this.buttonCalcuDraw);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 425);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(289, 123);
-            this.panel1.TabIndex = 25;
             // 
             // Form1
             // 
@@ -575,23 +615,23 @@
             this.splitContainerMain.Panel1.PerformLayout();
             this.splitContainerMain.Panel2.ResumeLayout(false);
             this.splitContainerMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSCurve)).EndInit();
-            this.Output.ResumeLayout(false);
-            this.Help.ResumeLayout(false);
-            this.Help.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCurve)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.groupBoxAccelerationMode.ResumeLayout(false);
             this.groupBoxAccelerationMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCurve)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSCurve)).EndInit();
+            this.Output.ResumeLayout(false);
             this.splitContainerDataOutput.Panel1.ResumeLayout(false);
-            this.splitContainerDataOutput.Panel1.PerformLayout();
             this.splitContainerDataOutput.Panel2.ResumeLayout(false);
             this.splitContainerDataOutput.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutput)).EndInit();
             this.splitContainerDataOutput2.Panel1.ResumeLayout(false);
             this.splitContainerDataOutput2.Panel1.PerformLayout();
             this.splitContainerDataOutput2.Panel2.ResumeLayout(false);
             this.splitContainerDataOutput2.Panel2.PerformLayout();
             this.splitContainerDataOutput2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.Help.ResumeLayout(false);
+            this.Help.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -633,11 +673,16 @@
         private System.Windows.Forms.PictureBox pictureBoxCurve;
         private System.Windows.Forms.SplitContainer splitContainerDataOutput;
         private System.Windows.Forms.SplitContainer splitContainerDataOutput2;
-        private System.Windows.Forms.TextBox textBoxDataOutputMain;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxDataOutputMainRightC;
+        private System.Windows.Forms.TextBox textBoxDataOutputMainRightR;
         private System.Windows.Forms.TextBox textBoxHelp;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataGridViewOutput;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Acceleration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Speed;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PWMCycle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PWMCycleVariation;
     }
 }
 
