@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -278,9 +279,9 @@ namespace StepperMotorSCurve
                 Font textFont = new Font(new FontFamily("Arial"),12,FontStyle.Regular,GraphicsUnit.Pixel);
                 Pen penBoard = new Pen(Color.Black);
                 Brush brushBoard = new SolidBrush(Color.Black);
-                Pen penSpeed = new Pen(Color.Red);
+                //Pen penSpeed = new Pen(Color.Red);
                 Brush brushSpeed = new SolidBrush(Color.Red);
-                Pen penAccele = new Pen(Color.Blue);
+                //Pen penAccele = new Pen(Color.Blue);
                 Brush brushAccele = new SolidBrush(Color.Blue);
                 g.DrawRectangle(penBoard, 0, 0, width-1, height-1); //画边框
                 g.FillRectangle(brushSpeed, 5, 10 , 30, 5);
@@ -292,8 +293,8 @@ namespace StepperMotorSCurve
                     int x = Convert.ToInt32(timeArray[i] * width / timeArray[actualArrayLim]);
                     int yAcceleration = Convert.ToInt32(accelerationArray[i] * height / maxAcceleration);
                     int ySpeed = Convert.ToInt32(speedArray[i] * height / maxSpeed);
-                    g.DrawRectangle(penSpeed, x, height - ySpeed, 1, 1);
-                    g.DrawRectangle(penAccele, x, height - yAcceleration, 1, 1);
+                    g.FillRectangle(brushSpeed, x, height - ySpeed, 1, 1);
+                    g.FillRectangle(brushAccele, x, height - yAcceleration, 1, 1);
                 }
             }
             this.pictureBoxSCurve.Image = bitmap;
