@@ -69,12 +69,22 @@
             this.PWMCycle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PWMCycleVariation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainerDataOutput2 = new System.Windows.Forms.SplitContainer();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxDataOutputPWMCycleChange = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBoxDataOutputMainRightR = new System.Windows.Forms.TextBox();
+            this.dataAnalysis = new System.Windows.Forms.TabPage();
+            this.splitContainerDataAnalyse = new System.Windows.Forms.SplitContainer();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonDataAnalyseRefresh = new System.Windows.Forms.Button();
+            this.buttonDataAnalyseProcess = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.buttonDataAnalyseLoad = new System.Windows.Forms.Button();
+            this.pictureBoxDataAnalyse = new System.Windows.Forms.PictureBox();
             this.Help = new System.Windows.Forms.TabPage();
             this.textBoxHelp = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxDataAnalyse = new System.Windows.Forms.TextBox();
             this.tabControlMain.SuspendLayout();
             this.Main.SuspendLayout();
             this.splitContainerMain.Panel1.SuspendLayout();
@@ -91,15 +101,23 @@
             this.splitContainerDataOutput2.Panel1.SuspendLayout();
             this.splitContainerDataOutput2.Panel2.SuspendLayout();
             this.splitContainerDataOutput2.SuspendLayout();
-            this.Help.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.dataAnalysis.SuspendLayout();
+            this.splitContainerDataAnalyse.Panel1.SuspendLayout();
+            this.splitContainerDataAnalyse.Panel2.SuspendLayout();
+            this.splitContainerDataAnalyse.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDataAnalyse)).BeginInit();
+            this.Help.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMain
             // 
             this.tabControlMain.Controls.Add(this.Main);
             this.tabControlMain.Controls.Add(this.Output);
+            this.tabControlMain.Controls.Add(this.dataAnalysis);
             this.tabControlMain.Controls.Add(this.Help);
             this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlMain.Location = new System.Drawing.Point(0, 0);
@@ -553,47 +571,6 @@
             this.splitContainerDataOutput2.SplitterDistance = 148;
             this.splitContainerDataOutput2.TabIndex = 0;
             // 
-            // textBoxDataOutputPWMCycleChange
-            // 
-            this.textBoxDataOutputPWMCycleChange.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDataOutputPWMCycleChange.Location = new System.Drawing.Point(3, 18);
-            this.textBoxDataOutputPWMCycleChange.Multiline = true;
-            this.textBoxDataOutputPWMCycleChange.Name = "textBoxDataOutputPWMCycleChange";
-            this.textBoxDataOutputPWMCycleChange.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDataOutputPWMCycleChange.Size = new System.Drawing.Size(142, 527);
-            this.textBoxDataOutputPWMCycleChange.TabIndex = 1;
-            // 
-            // textBoxDataOutputMainRightR
-            // 
-            this.textBoxDataOutputMainRightR.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDataOutputMainRightR.Location = new System.Drawing.Point(3, 18);
-            this.textBoxDataOutputMainRightR.Multiline = true;
-            this.textBoxDataOutputMainRightR.Name = "textBoxDataOutputMainRightR";
-            this.textBoxDataOutputMainRightR.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDataOutputMainRightR.Size = new System.Drawing.Size(139, 527);
-            this.textBoxDataOutputMainRightR.TabIndex = 1;
-            // 
-            // Help
-            // 
-            this.Help.Controls.Add(this.textBoxHelp);
-            this.Help.Location = new System.Drawing.Point(4, 25);
-            this.Help.Name = "Help";
-            this.Help.Size = new System.Drawing.Size(874, 554);
-            this.Help.TabIndex = 2;
-            this.Help.Text = "版本及说明";
-            this.Help.UseVisualStyleBackColor = true;
-            // 
-            // textBoxHelp
-            // 
-            this.textBoxHelp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxHelp.Location = new System.Drawing.Point(0, 0);
-            this.textBoxHelp.Multiline = true;
-            this.textBoxHelp.Name = "textBoxHelp";
-            this.textBoxHelp.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxHelp.Size = new System.Drawing.Size(874, 554);
-            this.textBoxHelp.TabIndex = 1;
-            this.textBoxHelp.Text = resources.GetString("textBoxHelp.Text");
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBoxDataOutputPWMCycleChange);
@@ -605,6 +582,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PWM周期变化量";
             // 
+            // textBoxDataOutputPWMCycleChange
+            // 
+            this.textBoxDataOutputPWMCycleChange.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxDataOutputPWMCycleChange.Location = new System.Drawing.Point(3, 18);
+            this.textBoxDataOutputPWMCycleChange.Multiline = true;
+            this.textBoxDataOutputPWMCycleChange.Name = "textBoxDataOutputPWMCycleChange";
+            this.textBoxDataOutputPWMCycleChange.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxDataOutputPWMCycleChange.Size = new System.Drawing.Size(142, 527);
+            this.textBoxDataOutputPWMCycleChange.TabIndex = 1;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBoxDataOutputMainRightR);
@@ -615,6 +602,154 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
+            // 
+            // textBoxDataOutputMainRightR
+            // 
+            this.textBoxDataOutputMainRightR.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxDataOutputMainRightR.Location = new System.Drawing.Point(3, 18);
+            this.textBoxDataOutputMainRightR.Multiline = true;
+            this.textBoxDataOutputMainRightR.Name = "textBoxDataOutputMainRightR";
+            this.textBoxDataOutputMainRightR.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxDataOutputMainRightR.Size = new System.Drawing.Size(139, 527);
+            this.textBoxDataOutputMainRightR.TabIndex = 1;
+            // 
+            // dataAnalysis
+            // 
+            this.dataAnalysis.Controls.Add(this.splitContainerDataAnalyse);
+            this.dataAnalysis.Location = new System.Drawing.Point(4, 25);
+            this.dataAnalysis.Name = "dataAnalysis";
+            this.dataAnalysis.Padding = new System.Windows.Forms.Padding(3);
+            this.dataAnalysis.Size = new System.Drawing.Size(874, 554);
+            this.dataAnalysis.TabIndex = 3;
+            this.dataAnalysis.Text = "数据分析";
+            this.dataAnalysis.UseVisualStyleBackColor = true;
+            // 
+            // splitContainerDataAnalyse
+            // 
+            this.splitContainerDataAnalyse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerDataAnalyse.Location = new System.Drawing.Point(3, 3);
+            this.splitContainerDataAnalyse.Name = "splitContainerDataAnalyse";
+            // 
+            // splitContainerDataAnalyse.Panel1
+            // 
+            this.splitContainerDataAnalyse.Panel1.Controls.Add(this.groupBox3);
+            this.splitContainerDataAnalyse.Panel1.Controls.Add(this.panel2);
+            // 
+            // splitContainerDataAnalyse.Panel2
+            // 
+            this.splitContainerDataAnalyse.Panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.splitContainerDataAnalyse.Panel2.Controls.Add(this.pictureBoxDataAnalyse);
+            this.splitContainerDataAnalyse.Size = new System.Drawing.Size(868, 548);
+            this.splitContainerDataAnalyse.SplitterDistance = 271;
+            this.splitContainerDataAnalyse.TabIndex = 1;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.textBoxDataAnalyse);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(271, 425);
+            this.groupBox3.TabIndex = 27;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "数据预览";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.buttonDataAnalyseRefresh);
+            this.panel2.Controls.Add(this.buttonDataAnalyseProcess);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.buttonDataAnalyseLoad);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 425);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(271, 123);
+            this.panel2.TabIndex = 25;
+            // 
+            // buttonDataAnalyseRefresh
+            // 
+            this.buttonDataAnalyseRefresh.Location = new System.Drawing.Point(20, 52);
+            this.buttonDataAnalyseRefresh.Name = "buttonDataAnalyseRefresh";
+            this.buttonDataAnalyseRefresh.Size = new System.Drawing.Size(112, 38);
+            this.buttonDataAnalyseRefresh.TabIndex = 15;
+            this.buttonDataAnalyseRefresh.Text = "刷新数据";
+            this.buttonDataAnalyseRefresh.UseVisualStyleBackColor = true;
+            this.buttonDataAnalyseRefresh.Click += new System.EventHandler(this.buttonDataAnalyseRefresh_Click);
+            // 
+            // buttonDataAnalyseProcess
+            // 
+            this.buttonDataAnalyseProcess.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDataAnalyseProcess.Location = new System.Drawing.Point(155, 8);
+            this.buttonDataAnalyseProcess.Name = "buttonDataAnalyseProcess";
+            this.buttonDataAnalyseProcess.Size = new System.Drawing.Size(97, 82);
+            this.buttonDataAnalyseProcess.TabIndex = 14;
+            this.buttonDataAnalyseProcess.Text = "绘制图形";
+            this.buttonDataAnalyseProcess.UseVisualStyleBackColor = true;
+            this.buttonDataAnalyseProcess.Click += new System.EventHandler(this.buttonDataAnalyseProcess_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label12.Location = new System.Drawing.Point(22, 96);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(230, 17);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "注：支持saleae logic单通道导出数据";
+            // 
+            // buttonDataAnalyseLoad
+            // 
+            this.buttonDataAnalyseLoad.Location = new System.Drawing.Point(20, 8);
+            this.buttonDataAnalyseLoad.Name = "buttonDataAnalyseLoad";
+            this.buttonDataAnalyseLoad.Size = new System.Drawing.Size(112, 38);
+            this.buttonDataAnalyseLoad.TabIndex = 12;
+            this.buttonDataAnalyseLoad.Text = "加载数据";
+            this.buttonDataAnalyseLoad.UseVisualStyleBackColor = true;
+            this.buttonDataAnalyseLoad.Click += new System.EventHandler(this.buttonDataAnalyseLoad_Click);
+            // 
+            // pictureBoxDataAnalyse
+            // 
+            this.pictureBoxDataAnalyse.BackColor = System.Drawing.Color.White;
+            this.pictureBoxDataAnalyse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxDataAnalyse.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxDataAnalyse.Name = "pictureBoxDataAnalyse";
+            this.pictureBoxDataAnalyse.Size = new System.Drawing.Size(593, 548);
+            this.pictureBoxDataAnalyse.TabIndex = 0;
+            this.pictureBoxDataAnalyse.TabStop = false;
+            // 
+            // Help
+            // 
+            this.Help.Controls.Add(this.textBoxHelp);
+            this.Help.Location = new System.Drawing.Point(4, 25);
+            this.Help.Name = "Help";
+            this.Help.Padding = new System.Windows.Forms.Padding(3);
+            this.Help.Size = new System.Drawing.Size(874, 554);
+            this.Help.TabIndex = 2;
+            this.Help.Text = "版本及说明";
+            this.Help.UseVisualStyleBackColor = true;
+            // 
+            // textBoxHelp
+            // 
+            this.textBoxHelp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxHelp.Location = new System.Drawing.Point(3, 3);
+            this.textBoxHelp.Multiline = true;
+            this.textBoxHelp.Name = "textBoxHelp";
+            this.textBoxHelp.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxHelp.Size = new System.Drawing.Size(868, 548);
+            this.textBoxHelp.TabIndex = 1;
+            this.textBoxHelp.Text = resources.GetString("textBoxHelp.Text");
+            // 
+            // textBoxDataAnalyse
+            // 
+            this.textBoxDataAnalyse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxDataAnalyse.Location = new System.Drawing.Point(3, 18);
+            this.textBoxDataAnalyse.Multiline = true;
+            this.textBoxDataAnalyse.Name = "textBoxDataAnalyse";
+            this.textBoxDataAnalyse.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxDataAnalyse.Size = new System.Drawing.Size(265, 404);
+            this.textBoxDataAnalyse.TabIndex = 0;
             // 
             // Form1
             // 
@@ -643,12 +778,21 @@
             this.splitContainerDataOutput2.Panel1.ResumeLayout(false);
             this.splitContainerDataOutput2.Panel2.ResumeLayout(false);
             this.splitContainerDataOutput2.ResumeLayout(false);
-            this.Help.ResumeLayout(false);
-            this.Help.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.dataAnalysis.ResumeLayout(false);
+            this.splitContainerDataAnalyse.Panel1.ResumeLayout(false);
+            this.splitContainerDataAnalyse.Panel2.ResumeLayout(false);
+            this.splitContainerDataAnalyse.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDataAnalyse)).EndInit();
+            this.Help.ResumeLayout(false);
+            this.Help.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -701,6 +845,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PWMCycleVariation;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TabPage dataAnalysis;
+        private System.Windows.Forms.SplitContainer splitContainerDataAnalyse;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button buttonDataAnalyseProcess;
+        private System.Windows.Forms.Button buttonDataAnalyseLoad;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.PictureBox pictureBoxDataAnalyse;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button buttonDataAnalyseRefresh;
+        private System.Windows.Forms.TextBox textBoxDataAnalyse;
     }
 }
 

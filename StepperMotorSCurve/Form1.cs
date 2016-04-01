@@ -29,7 +29,7 @@ namespace StepperMotorSCurve
             InitializeComponent();
         }
 
-        #region CaculateParameter Functions
+        #region 计算参数
         private void textBoxCrystalFrequency_TextChanged(object sender, EventArgs e)
         {
             caculateParameter();
@@ -141,7 +141,7 @@ namespace StepperMotorSCurve
         }
         #endregion
 
-
+        #region 计算绘图
         private void buttonCalcuDraw_Click(object sender, EventArgs e)
         {
             this.textBoxDataOutputPWMCycleChange.Text = "";
@@ -328,5 +328,126 @@ namespace StepperMotorSCurve
                 }
             }
         }
+        #endregion
+
+        #region 数据分析
+
+        private string dataAnalyseFilePath;
+
+        private void buttonDataAnalyseLoad_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "CSV (*.csv)|*.csv";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                dataAnalyseFilePath = ofd.FileName;
+                loadDataAnalyseData();
+            }
+        }
+
+        private void buttonDataAnalyseRefresh_Click(object sender, EventArgs e)
+        {
+            loadDataAnalyseData();
+        }
+
+        private void loadDataAnalyseData()
+        {
+            try
+            {
+                StringBuilder sb = new StringBuilder("序号,     时间,                   数据\r\n");
+                string[] lines = File.ReadAllLines(dataAnalyseFilePath);
+                for(int i=1; i< lines.Length; i++)
+                {
+                    string[] columns = lines[i].Split(',');
+                    try
+                    {
+                        sb.Append(i.ToString("000000"));
+                        sb.Append(", ");
+                        sb.Append(Double.Parse(columns[0]).ToString("N11"));
+                        sb.Append(", ");
+                        sb.Append(Int32.Parse(columns[1]).ToString());
+                        sb.Append("\r\n");
+                    }
+                    catch {
+                        sb.Append("\r\n");
+                    }
+                }
+                this.textBoxDataAnalyse.Text = sb.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("加载文件失败。" + ex.Message);
+            }
+        }
+
+        private void buttonDataAnalyseProcess_Click(object sender, EventArgs e)
+        {
+            int width = this.pictureBoxDataAnalyse.Width;
+            int height = this.pictureBoxDataAnalyse.Height;
+
+            Bitmap bitmap = new Bitmap(width, height);
+            using (Graphics g = Graphics.FromImage(bitmap))
+            {
+                Font textFont = new Font(new FontFamily("Arial"), 12, FontStyle.Regular, GraphicsUnit.Pixel);
+                Pen penBoard = new Pen(Color.Black);
+                Brush brushBoard = new SolidBrush(Color.Black);
+                //Pen penSpeed = new Pen(Color.Red);
+                Brush brushSpeed = new SolidBrush(Color.Red);
+                //Pen penAccele = new Pen(Color.Blue);
+                Brush brushAccele = new SolidBrush(Color.Blue);
+                g.DrawRectangle(penBoard, 0, 0, width - 1, height - 1); //画边框
+                //画图例
+                g.FillRectangle(brushSpeed, 5, 10, 30, 5);
+                g.DrawString(String.Format("速度-最大值:{0}pps(未细分前)", 0), textFont, brushBoard, 40, 7);
+                //得到最大速度
+                Double maxSpeed = 0;
+                Double maxTime = 0;
+                Double minTime = Double.MaxValue;
+                string[] lines = this.textBoxDataAnalyse.Lines;
+                for (int rows = 1; rows < lines.Length; rows++)
+                {
+                    try
+                    {
+                        Double timeNow = Double.Parse((lines[rows].Split(','))[1]);
+                        Double timeLast = Double.Parse((lines[rows - 1].Split(','))[1]);
+                        Double speed = 1 / (timeNow - timeLast);
+                        if (speed > maxSpeed)
+                        {
+                            maxSpeed = speed;
+                        }
+                        if (timeNow > maxTime)
+                        {
+                            maxTime = timeNow;
+                        }
+                        if (timeNow < minTime)
+                        {
+                            minTime = timeNow;
+                        }
+                    }
+                    catch
+                    { 
+                    }
+                }
+                //绘制图形
+                for (int rows = 1; rows < lines.Length; rows++)
+                {
+                    try
+                    {
+                        Double timeNow = Double.Parse((lines[rows].Split(','))[1]);
+                        Double timeLast = Double.Parse((lines[rows - 1].Split(','))[1]);
+                        Double speed = 1 / (timeNow - timeLast);
+                        int x = Convert.ToInt32((timeNow-minTime) * width / (maxTime-minTime));
+                        int ySpeed = Convert.ToInt32(speed * height / maxSpeed);
+                        g.FillRectangle(brushSpeed, x, height - ySpeed, 1, 1);
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+            this.pictureBoxDataAnalyse.Image = bitmap;
+        }
+
+        #endregion
     }
 }
