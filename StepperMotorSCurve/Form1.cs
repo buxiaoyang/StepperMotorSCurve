@@ -438,7 +438,7 @@ namespace StepperMotorSCurve
                         Double speed = 1 / (timeNow - timeLast);
                         int x = Convert.ToInt32((timeNow-minTime) * width / (maxTime-minTime));
                         int ySpeed = Convert.ToInt32(speed * height / maxSpeed);
-                        g.FillRectangle(brushSpeed, x, height - ySpeed, 1, 1);
+                        g.FillRectangle(brushSpeed, x, height - ySpeed + 20, 2, 2);
                     }
                     catch
                     {
