@@ -12,13 +12,13 @@ namespace StepperMotorSCurve
     public partial class Form1 : Form
     {
 
-        private Double[] accelerationArray = new Double[10000];  //加速度数组
-        private Double[] speedArray = new Double[10000];  //速度数组
-        private Double[] pwmCycleArray = new Double[10000];  //Pwm周期数组
-        private Double[] timeArray = new Double[10000];  //时间数组
-        private Double[] pwmTheoryArray = new Double[10000]; //理论的Pwm值（机器周期整数倍）
-        private Int32[] pwmActualArray = new Int32[10000]; //实际的Pwm值（机器周期整数倍）
-        private Double[] pwmIncrementArray = new Double[10000]; //Pwm增量（机器周期整数倍）
+        private Double[] accelerationArray = new Double[90000];  //加速度数组
+        private Double[] speedArray = new Double[90000];  //速度数组
+        private Double[] pwmCycleArray = new Double[90000];  //Pwm周期数组
+        private Double[] timeArray = new Double[90000];  //时间数组
+        private Double[] pwmTheoryArray = new Double[90000]; //理论的Pwm值（机器周期整数倍）
+        private Int32[] pwmActualArray = new Int32[90000]; //实际的Pwm值（机器周期整数倍）
+        private Double[] pwmIncrementArray = new Double[90000]; //Pwm增量（机器周期整数倍）
 
         private int actualArrayLim = 0;
         private Double maxAcceleration = 0;
@@ -166,7 +166,7 @@ namespace StepperMotorSCurve
             if (this.radioButtonTriangle.Checked) //三角波加速度
             {
                 int i;
-                for (i = 1; i <= 10000; i++)
+                for (i = 1; i <= 90000; i++)
                 {
                     accelerationArray[i] = accelerationArray[i - 1] + accelerationSlope * pwmCycleArray[i - 1];
                     speedArray[i] = speedArray[i - 1] + accelerationArray[i - 1] * pwmCycleArray[i - 1];
@@ -206,7 +206,7 @@ namespace StepperMotorSCurve
             else if (this.radioButtonSinewave.Checked) //正弦波加速度
             {
                 int i;
-                for (i = 1; i <= 10000; i++)
+                for (i = 1; i <= 90000; i++)
                 {
                     speedArray[i] = speedArray[i-1]+accelerationArray[i-1]*pwmCycleArray[i-1];  //v=v0+at
                     pwmTheoryArray[i] = 1/speedArray[i];   //pwm周期（除以计数周期的值），速度的倒数
